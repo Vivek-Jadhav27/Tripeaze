@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Trips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .trip-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .trip-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .trip-item:last-child {
+            border-bottom: none;
+        }
+
+        .trip-header {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .itinerary-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .itinerary-day {
+            margin-bottom: 20px;
+        }
+
+        .itinerary-day p {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .no-trips {
+            text-align: center;
+            font-size: 1.2em;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Trips</h1>
+    <div class="trip-container">
+        {% if trips %}
+            {% for trip in trips %}
+                <div class="trip-item">
+                    <div class="trip-header">{{ trip.city }} ({{ trip.num_days }} days)</div>
+                    <h3>Itinerary:</h3>
+                    <ul class="itinerary-list">
+                        {% for day in trip.itinerary %}
+                            <li class="itinerary-day">
+                                <strong>Day {{ day.day }}:</strong>
+                                <p>Hotel: <a href="{{ day.hotel.url }}">{{ day.hotel.name }}</a> (Rating: {{ day.hotel.rating }})</p>
+                                <p>Breakfast: <a href="{{ day.breakfast.url }}">{{ day.breakfast.name }}</a> (Rating: {{ day.breakfast.rating }})</p>
+                                <p>Morning Activity: <a href="{{ day.morning_activity.url }}">{{ day.morning_activity.name }}</a> (Rating: {{ day.morning_activity.rating }})</p>
+                                <p>Lunch: <a href="{{ day.lunch.url }}">{{ day.lunch.name }}</a> (Rating: {{ day.lunch.rating }})</p>
+                                <p>Afternoon Activity: <a href="{{ day.afternoon_activity.url }}">{{ day.afternoon_activity.name }}</a> (Rating: {{ day.afternoon_activity.rating }})</p>
+                                <p>Dinner: <a href="{{ day.dinner.url }}">{{ day.dinner.name }}</a> (Rating: {{ day.dinner.rating }})</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-trips">No trips found.</div>
+        {% endif %}
+    </div>
+</body>
+</html>

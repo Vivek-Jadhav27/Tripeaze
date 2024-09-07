@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "545773694046",
+    "project_id": "tripeaze-873a6",
+    "storage_bucket": "tripeaze-873a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545773694046:android:e261971c8e2acd66d5d8cf",
+        "android_client_info": {
+          "package_name": "com.example.tripeaze"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANl4B1L3sS8a8caSxGpOZNLKOd70qzPwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
