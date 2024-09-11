@@ -21,5 +21,5 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/tripeaze.git
-cd tripeaze
+git clone (https://github.com/Vivek-Jadhav27/Tripeaze.git)
+cd Tripeaze
